@@ -1,0 +1,86 @@
+Angular 17 CLI Commands
+    npm i -g @angular/cli@version       -> add cli global
+    ng new my-angular-app               -> create new project
+    ng generate                         -> it generate the required project component/module etc...
+        component <fileName> 
+        module
+        service
+        pipe
+        directives
+        routing
+        interface
+        class
+
+    ng test                             -> used for running the unit tests (.spec.ts)
+    ng service                          -> build and launch app locally
+    ng build                            -> when its production ready (it generate dist folder)
+    ng add @angular/material            -> ng add for adding packages and modules of angular
+    ng update                           -> update any angular Application to other versions using ng update
+    ng lint                             -> make sure typescript is proper / cording syntax / patterns (not build in) need to add external
+
+1. angular.json
+    -> Configuring your styles, js or for pipeline deployments
+    -> Settings specific to your project
+
+2. tsconfig.app.json
+    -> Tells you the typescript configuration for your project
+
+3. tsconfig.spec.json
+    -> Typescript test specific configuration
+
+4. index.html
+    -> Angular is a SPA (Single Page Application)
+    -> There is only 1 html file
+        <app-root></app-root>
+        First component to be initialized 
+
+5. main.ts
+    -> Entry point to your project
+    -> which is the first component to be rendered in your project
+
+6. styles.scss
+    -> adding global styles to your project
+
+7. src/app
+    -> every component in angular has 4 files
+            .html           -> template / HTML
+            .scss/.css      -> styles
+            .spec.ts        -> unit test files (Jasmine -> writing the unit test | Karma -> test runner)
+            .ts             -> component class/logical piece of component
+
+8. Angular 17 component
+    - Angular component are declared using @component decorator
+    - @component has multiple parameters 
+        > selector      -> its the name which can be user/referred in application
+        > standalone    -> by default all the angular application are standalone
+                                no need to declare inside a module
+                                you can directly use them in the application
+        > imports       -> you will provide all required modules for this component
+        > templateUrl   -> HTML for the component
+        > template      -> use when only has limited codes
+        > styleUrl      -> the css or stylesheets for the component
+        > styles        -> define inline stylings
+
+9. component data flow
+    > @Input        -> sending data to the component
+    > @Output       -> sending data from the component
+
+10. component data binding
+    > class > template > class
+
+11. component lifecycle methods
+    > right from creation > [8 stages] > destroy
+
+12. Angular 17 module architecture
+    > no more NgModule
+    > no more default AppModule
+    > everything is standalone it can be injected and used anywhere
+
+    > Feature modules -> (users, payment, profile, orders, shoppings etc...)
+    > Lazy loading    -> modules can be lazily loaded, meaning they are loaded on demand, which can significantly improve the application initial loading time
+    > shared modules
+    > core modules
+    > module imports
+    > service scoping
+    > declarable
+    > exporting module content
